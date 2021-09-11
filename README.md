@@ -6,7 +6,7 @@
 Features Implemented
 - **Loading** state while images are fetched
 - **Shopify** design theme
-- **Image Tags (#)** 
+- **Image Tags with NLP(#)** 
 
 Extra Note (Image Tags)
 - Since Nasa disabled their **concept_tags** parameter on the **APOD API** which provides useful **image tags**, I decided to build my own **API** to do such. 
