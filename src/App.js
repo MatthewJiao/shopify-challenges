@@ -47,7 +47,7 @@ function App() {
   }
 
   useEffect(() => {
-    fetch(`https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_API_KEY}&count=8`)
+    fetch(`https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_API_KEY}&count=50`)
       .then(res => res.json())
       .then(data => {
         setImages(removeVideos(data));
