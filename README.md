@@ -1,4 +1,4 @@
-**[Live Demo]**(https://spacestagram-shopify.herokuapp.com/)
+**[Live Demo](https://spacestagram-shopify.herokuapp.com/)**
 
 Shopify Frontend Challenge
 
