@@ -7,14 +7,28 @@ import Loading from './components/Loading'
 function App() {
   const [images, setImages] = useState([])
   const [isLoading, setIsLoading] = useState(true)
-  const [term, setTerm] = useState('vacation')
+  const [isLoadingTags, setIsLoadingTags] = useState(true)
 
-  const objToArr = (obj) => {
-    const arr = []
-    for (const item in obj) {
-      arr.push(item)
+  const [term, setTerm] = useState('vacation')
+  const [imageTags, setImageTags] = useState([])
+
+  const getTags = () => {
+    let tagStr = ""
+    let sep = "<<<>>>"
+    for (let i = 0; i < images.length; ++i) {
+      if (i == images.length - 1) {
+        sep = ""        
+      } 
+      tagStr += (images[i].explanation + sep)
+      
     }
-    return arr
+    tagStr = tagStr.replaceAll('?', '')
+    fetch(`http://127.0.0.1:5000/predict/` + tagStr)
+    .then((data) => {
+      console.log('data')
+    })
+    console.log('jkkk')
+    
   }
 
   useEffect(() => {
@@ -23,6 +37,7 @@ function App() {
       .then(data => {
         setImages(data);
         setIsLoading(false);
+        getTags()
         console.log(data)
       })
       .catch(err => console.log(err));
@@ -33,7 +48,7 @@ function App() {
     <div className = "mx-auto">
       <NavbarC/>
 
-      { isLoading ? <Loading/> :
+      { (isLoading || isLoadingTags) ? <Loading/> :
       <div style = {displayStyle} className = "mt-12">
         {images.map((image, index) => (
           <ImageCard key = {index} image = {image}/>

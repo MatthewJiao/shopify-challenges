@@ -8,6 +8,7 @@ nlp = spacy.load("en_core_web_sm")
 def index1(features):
     try:
         listOfDescriptions = features.split('<<<>>>')
+        print(len(listOfDescriptions))
         parsedLists = []
 
         for item in listOfDescriptions:
@@ -16,7 +17,8 @@ def index1(features):
             for chunk in doc.noun_chunks:
                 temp.append(chunk.root.text)
             parsedLists.append(temp)
-        print(parsedLists)
+            
+        
         return str(parsedLists)
     except:
         return "Error"
