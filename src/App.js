@@ -12,17 +12,6 @@ function App() {
   const [term, setTerm] = useState('vacation')
   const [imageTags, setImageTags] = useState([])
 
-  const removeVideos = (images) => {
-    let imgList = []
-    for (let i = 0; i < images.length; ++i) {
-      if (images[i].media_type != "video") {
-        imgList.push(images[i])
-      }
-    }
-    console.log(imgList)
-    return images
-  }
-
   const getTags = () => {
     let tagStr = []
     for (let i = 0; i < images.length; ++i) {
@@ -63,7 +52,7 @@ function App() {
       { (isLoading || isLoadingTags) ? <Loading/> :
       <div style = {displayStyle} className = "mt-12">
         {images.map((image, index) => (
-          <ImageCard key = {index} image = {image} tags = {imageTags[index]}/>
+          <ImageCard key = {index} image = {image} tags = {['imageTags[index]']}/>
         ))}
       </div>
       }
