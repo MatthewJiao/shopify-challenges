@@ -37,7 +37,7 @@ function App() {
       url: API
     }).then((res) => {
       let temp = res.data
-      console.log(temp + "k")
+      console.log(temp + "")
       temp = temp.replaceAll("'", '')
       temp = temp.replaceAll(",", '')
       temp = temp.replaceAll("[[", '')
