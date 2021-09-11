@@ -1,0 +1,8 @@
+entrypoint: "gunicorn -b :$PORT main:app -t 4000"
+instance_class: F4
+runtime: python38 
+readiness_check:
+  timeout_sec: 300
+liveness_check:
+  timeout_sec: 300
+
