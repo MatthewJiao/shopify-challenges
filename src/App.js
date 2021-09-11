@@ -11,7 +11,7 @@ function App() {
 
   const [term, setTerm] = useState('vacation')
   const [imageTags, setImageTags] = useState([])
-
+  console.log('test')
   const getTags = () => {
     let tagStr = ""
     let sep = "vvvvv"
