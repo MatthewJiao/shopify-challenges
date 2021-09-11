@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Container';
-import shopify from '../assets/shopify-bag.png'
 
 const NavbarC = () => {
   
@@ -9,19 +8,15 @@ const NavbarC = () => {
   return (
     
         <div className = "pb-3 pt-1" style = {navStyle}>
-            <img src = {shopify} style = {navImageStyle}></img>
-
-
-           pacestagram
-           
+           Image Repository
         </div>
     
   )
 }
 
 const navStyle = {
-    color: "#97bd4e",
-    backgroundColor: "#f9f4eb",
+    color: "#c5d4d2",
+    backgroundColor: "#deffe2",
     opacity: 0.95,
     position: "fixed",
     top: 0,
@@ -31,7 +26,6 @@ const navStyle = {
     display: "flex",
 
     justifyContent: "center",
-    fontStyle: "italic"
 }
 
 const navImageStyle = {

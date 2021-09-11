@@ -1,53 +1,20 @@
 import React, {useState, useEffect} from 'react'
 import ImageCard from './components/ImageCard'
-import NavbarC from './components/Navbar'
-import Loading from './components/Loading'
-import axios from 'axios'
+import ImageSearch from './components/ImageSearch'
+import NavbarC from './components/NavbarC'
 
 function App() {
   const [images, setImages] = useState([])
   const [isLoading, setIsLoading] = useState(true)
-  const [isLoadingTags, setIsLoadingTags] = useState(true)
-
   const [term, setTerm] = useState('kitten')
-  const [imageTags, setImageTags] = useState([])
-
-  const removeVideos = (data) => {
-    let lst = []
-    for (let i = 0; i < data.length; ++i) {
-      if (data[i].media_type != "video") {
-        lst.push(data[i])
-      }
-    }
-
-    return lst
-  }
-
-  var getTags = (images) => {
-    var tagStr = []
-    for (let i = 0; i < images.length; ++i) {
-      if (images.media_type == "video") continue
-      let filtered = images[i].explanation
-      filtered = filtered.replace(/[^a-zA-Z0-9 ]/g, "")
-      let lst = filtered.split(" ").filter((item) => item.length > 6)
-      let shuffled = lst.sort(() => 0.5 - Math.random());
-      let selected = shuffled.slice(0, (shuffled.length - 1)/5);
-
-      tagStr.push(selected)
-    }
-
-    setImageTags(tagStr) 
-    setIsLoadingTags(false)
-    
-  }
 
   useEffect(() => {
-    fetch(`https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_API_KEY}&count=50`)
+    fetch(`https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}&q=${term}&image_type=photo&pretty=true`)
       .then(res => res.json())
       .then(data => {
-        setImages(removeVideos(data));
+        setImages(data.hits);
         setIsLoading(false);
-        getTags(data)
+        console.log(data)
       })
       .catch(err => console.log(err));
   }, [term]);
@@ -56,20 +23,17 @@ function App() {
   return (
     <div className = "mx-auto">
       <NavbarC/>
-      { (isLoading || isLoadingTags) ? <Loading/> :
-      <div style = {displayStyle} className = "mt-12">
+      <ImageSearch searchText = {(text) => setTerm(text)}/>
+      {!isLoading && images.length === 0 ? <h1 className = "text-5xl text-center mx-auto mt-32">No Images Found</h1>: '' }
+      { isLoading ? <h1 className = "text-6xl text-center mx-auto mt-32">Loading</h1> :
+      <div className = "grid grid-cols-3 gap-4">
         {images.map((image, index) => (
-          <ImageCard key = {index} image = {image} tags = {imageTags[index]}/>
+          <ImageCard key = {index} image = {image}/>
         ))}
       </div>
       }
     </div>
   );
 }
-
-const displayStyle = {
-  backgroundColor: "white"
-}
-
 
 export default App;

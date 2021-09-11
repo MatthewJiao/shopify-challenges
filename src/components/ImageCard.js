@@ -1,29 +1,27 @@
 import React, {useState} from 'react'
 import parse from 'de-noun-parser';
-import { BsHeartFill } from 'react-icons/bs';
 
 
-const ImageCard = ({image, tags}) => {
-  const description = image.explanation.split('.')[0]
-  const [isLiked, setIstLiked] = useState(false)
-
-  const heartStyle = {
-    color: isLiked ? "red" : "#fce3d7",
-  }
+const ImageCard = ({image}) => {
+  const tags = image.tags.split(' ')
+  
   
     return (
-        <div style = {cardBorderStyle} className = "max-w-sm rounded-md overflow-hidden shadow-lg">
-      <img src = {image.url} alt = {image.hdurl} style = {imageStyle} className = "w-full"/>
-      <div className = "px-6 py-4">
-        <div style = {titleStyle} className = "font-bold text-xl mb-2">
-          {image.title}
+      <div style = {cardBorderStyle} className = "max-w-sm rounded-md overflow-hidden shadow-lg">
+        <img src = {image.webformatURL} alt = {image.largeImageURL} style = {imageStyle} className = "w-full"/>
+          <div className = "px-6 py-4">
+           <div style = {titleStyle} className = "font-bold text-xl mb-2">
+            
         </div>
         <ul style = {infoStyle}>
-          <li style = {{color: "#8ca35a"}}>
-            <strong>Date:</strong> {image.date}
+          <li style = {{color: "#31948e"}}>
+            <strong>View:</strong> {image.views}
           </li>
           <li>
-            <strong>Description:</strong> {description}.
+            <strong>Downloads:</strong> {image.downloads}
+          </li>
+          <li>
+            <strong>Likes:</strong> {image.likes}
           </li>
           
         </ul>
@@ -37,11 +35,7 @@ const ImageCard = ({image, tags}) => {
             </span>
           ))}
         </div>
-        <button onClick = {() => setIstLiked(!isLiked)} style = {heartButtonStyle}>
-
-          <BsHeartFill style = {heartStyle} />   
-
-        </button>     
+           
       </div>
       
     </div>
@@ -62,12 +56,12 @@ const botStyle = {
 }
 
 const titleStyle = {
-  color: "#618c40"
+  color: "#15827b"
 }
 
 const cardBorderStyle = {
-  borderColor: "#b5c98a",
-  borderWidth: "2px",
+  borderColor: "#6DCBC5",
+  borderWidth: "3px",
   marginBottom: "0.5rem",
   marginLeft: "auto",
   marginRight: "auto",
@@ -75,12 +69,12 @@ const cardBorderStyle = {
 }
 
 const infoStyle = {
-  color: "#b5c98a"
+  color: "#6DCBC5"
 }
 
 const tagStyle = {
-  color: "#97bd4e",
-  backgroundColor: "#f9f4eb",
+  color: "#368580",
+  backgroundColor: "#deffe2",
   marginTop: "0.2rem", 
   marginBottom: "0.2rem", 
 
