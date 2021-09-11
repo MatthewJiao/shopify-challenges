@@ -67,7 +67,7 @@ function App() {
       { (isLoading || isLoadingTags) ? <Loading/> :
       <div style = {displayStyle} className = "mt-12">
         {images.map((image, index) => (
-          <ImageCard key = {index} image = {image} tags = {imageTags[index]}/>
+          <ImageCard key = {index} image = {image} tags = {['imageTags[index]']}/>
         ))}
       </div>
       }
