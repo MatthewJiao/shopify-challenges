@@ -11,9 +11,9 @@ Features Implemented
 Extra Note (Image Tags)
 - Since Nasa disabled their **concept_tags** parameter on the **APOD API** which provides useful **image tags**, I decided to build my own **API** to do such. 
 - I used **spaCy** **NLP** speech tagging library in **Python** and deployed the endpoint with **Flask**. (Javascript doesn't have great NLP capabilities!).
-- I left **this** feature **local** because of the extra **latency** and **risk** of the backend **crashing** which I *occasionally* experienced with the live version.
+- I left **this** feature **local** because of the extra **latency** and **risk** of the backend **crashing** which I *occasionally* experienced while testing.
 - Instead, the **live** demo makes use of a simpler tagging technique 
-- **Directory:** `microservice/app.py` (Custom **API** I built)
+- **Directory:** `microservice/app.py` (Custom NLP **API** I built)
 
 Extra Note (Video)
 - I **filtered out** all **API responses** from **NASA APOD** with the `media_type` parameter of `video` for **simplicity**
