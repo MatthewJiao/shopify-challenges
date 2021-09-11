@@ -1,6 +1,6 @@
 **[Live Demo](https://spacestagram-shopify.herokuapp.com/)**
 
-Shopify Frontend Challenge
+**Shopify Frontend Challenge**
 
 Features Implemented
 - **Loading** state while images are fetched
