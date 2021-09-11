@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import ImageCard from './components/ImageCard'
 import NavbarC from './components/Navbar'
+import Loading from './components/Loading'
+
 
 function App() {
   const [images, setImages] = useState([])
@@ -31,7 +33,7 @@ function App() {
     <div className = "mx-auto">
       <NavbarC/>
 
-      { isLoading ? <h1 className = "text-6xl text-center mx-auto mt-32">Loading ...</h1> :
+      { isLoading ? <Loading/> :
       <div style = {displayStyle} className = "mt-12">
         {images.map((image, index) => (
           <ImageCard key = {index} image = {image}/>

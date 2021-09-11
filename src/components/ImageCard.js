@@ -1,14 +1,17 @@
 import React, {useState} from 'react'
 import parse from 'de-noun-parser';
-import { BsHeart } from 'react-icons/bs';
-import { IconContext } from "react-icons";
+import { BsHeartFill } from 'react-icons/bs';
 
 
 const ImageCard = ({image}) => {
   const tags = ["test1", "test1", "test3"]
   const description = image.explanation.split('.')[0]
-  const [isLike, setIstLike] = useState(false)
+  const [isLiked, setIstLiked] = useState(false)
 
+  const heartStyle = {
+    color: isLiked ? "red" : "#fce3d7",
+  }
+  
     return (
         <div style = {cardBorderStyle} className = "max-w-sm rounded-md overflow-hidden shadow-lg">
       <img src = {image.url} alt = {image.hdurl} style = {imageStyle} className = "w-full"/>
@@ -30,14 +33,14 @@ const ImageCard = ({image}) => {
       <div style = {botStyle} className = "px-6 py-4 pt-1">
         <div>
           {tags.map((tag, index) => (
-              <span style = {tagStyle} key = {index} className = "inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
+              <span style = {tagStyle} key = {index} className = "inline-block rounded-md px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
               #{tag}
             </span>
           ))}
         </div>
-        <button style = {heartButtonStyle}>
+        <button onClick = {() => setIstLiked(!isLiked)} style = {heartButtonStyle}>
 
-        <i class="fal fa-heart"></i>  
+          <BsHeartFill style = {heartStyle} />   
 
         </button>     
       </div>
@@ -46,9 +49,7 @@ const ImageCard = ({image}) => {
     )
 }
 
-const heartStyle = {
-fill: "red"
-}
+
 
 const heartButtonStyle = {
   height: "2rem",
@@ -79,7 +80,8 @@ const infoStyle = {
 }
 
 const tagStyle = {
-  color: "#618c40"
+  color: "#97bd4e",
+  backgroundColor: "#f9f4eb"
 }
 
 const imageStyle = {
