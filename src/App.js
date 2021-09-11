@@ -11,20 +11,19 @@ function App() {
 
   const [term, setTerm] = useState('vacation')
   const [imageTags, setImageTags] = useState([])
-  console.log('test')
+
   const getTags = () => {
-    let tagStr = ""
-    let sep = "vvvvv"
+    let tagStr = []
     for (let i = 0; i < images.length; ++i) {
-      if (i == images.length - 1) {
-        sep = ""        
-      } 
-      tagStr += (images[i].explanation + sep)
+      let filtered = images[i].explanation
+      //filtered = filtered.replace(/[^a-zA-Z0-9 ]/g, "")
+      tagStr.push(images[i].explanation.replace(/[^a-zA-Z0-9 ]/g, "").split(" ").filter((item) => item.length > 6).splice(0, (images[i].explanation.replace(/[^a-zA-Z0-9 ]/g, "").split(" ").length - 1) / 20))
       
     }
-    tagStr = tagStr.replaceAll('?', '')
-    tagStr = tagStr.replace(/[^a-zA-Z0-9 ]/g, "")
-    let API = "http://127.0.0.1:5000/predict/" + tagStr
+
+    setImageTags(tagStr)
+    console.log(tagStr)
+ 
 
    
 
@@ -53,7 +52,7 @@ function App() {
       { (isLoading || isLoadingTags) ? <Loading/> :
       <div style = {displayStyle} className = "mt-12">
         {images.map((image, index) => (
-          <ImageCard key = {index} image = {image} tags = {['imageTags[index]']}/>
+          <ImageCard key = {index} image = {image} tags = {imageTags[index]}/>
         ))}
       </div>
       }
