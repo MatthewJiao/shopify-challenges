@@ -22,8 +22,14 @@ function App() {
       tagStr += (images[i].explanation + sep)
       
     }
-    tagStr = tagStr.replaceAll('?', '')
+    console.log('tagStr')
+    console.log(tagStr + "")
+    //tagStr = tagStr.replaceAll('?', '')
+    //tagStr = tagStr.replaceAll('=', '')
+    //tagStr = tagStr.replaceAll('/', '')
     tagStr = tagStr.replace(/[^a-zA-Z0-9 ]/g, "")
+    console.log(tagStr)
+    //tagStr = "Pleiades star cluster, surrounded by cosmic dust clouds and shining from a mere 400 light-years away.   digg_url  'http:apod.nasa.govapodap080702.html'; digg_skin  'compact';vvvvvIf you were floating above the Earth right now, this is what you might see. Two "
     let API = "http://127.0.0.1:5000/predict/" + tagStr
 
     axios({
@@ -31,14 +37,15 @@ function App() {
       url: API
     }).then((res) => {
       let temp = res.data
+      console.log(temp + "k")
       temp = temp.replaceAll("'", '')
       temp = temp.replaceAll(",", '')
       temp = temp.replaceAll("[[", '')
       temp = temp.replaceAll("]]", '')
       let newTags = temp.split('] [')
       setImageTags(newTags.map(item => (item.split(' ').splice(0, (item.split(' ').length - 1)/4))))
-      console.log(newTags + '')
-      console.log(newTags)
+      console.log(imageTags + '')
+      console.log(imageTags)
 
     })
 
@@ -67,7 +74,7 @@ function App() {
       { (isLoading || isLoadingTags) ? <Loading/> :
       <div style = {displayStyle} className = "mt-12">
         {images.map((image, index) => (
-          <ImageCard key = {index} image = {image} tags = {imageTags[index]}/>
+          <ImageCard key = {index} image = {image} tags = {['imageTags[index]']}/>
         ))}
       </div>
       }
