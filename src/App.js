@@ -36,12 +36,7 @@ function App() {
       tagStr.push(selected)
     }
 
-    setImageTags(tagStr)
-    console.log(tagStr)
- 
-
-   
-
+    setImageTags(tagStr) 
     setIsLoadingTags(false)
     
   }
@@ -53,8 +48,6 @@ function App() {
         setImages(removeVideos(data));
         setIsLoading(false);
         getTags(data)
-        console.log("hello")
-        console.log(data)
       })
       .catch(err => console.log(err));
   }, [term]);
@@ -63,7 +56,6 @@ function App() {
   return (
     <div className = "mx-auto">
       <NavbarC/>
-
       { (isLoading || isLoadingTags) ? <Loading/> :
       <div style = {displayStyle} className = "mt-12">
         {images.map((image, index) => (
