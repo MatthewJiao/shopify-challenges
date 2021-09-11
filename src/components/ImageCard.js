@@ -3,8 +3,7 @@ import parse from 'de-noun-parser';
 import { BsHeartFill } from 'react-icons/bs';
 
 
-const ImageCard = ({image}) => {
-  const tags = ["test1", "test1", "test3"]
+const ImageCard = ({image, tags}) => {
   const description = image.explanation.split('.')[0]
   const [isLiked, setIstLiked] = useState(false)
 
@@ -81,7 +80,10 @@ const infoStyle = {
 
 const tagStyle = {
   color: "#97bd4e",
-  backgroundColor: "#f9f4eb"
+  backgroundColor: "#f9f4eb",
+  marginTop: "0.2rem", 
+  marginBottom: "0.2rem", 
+
 }
 
 const imageStyle = {

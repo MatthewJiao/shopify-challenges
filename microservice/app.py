@@ -2,7 +2,7 @@ from flask import Flask
 import spacy
 
 from flask_cors import CORS, cross_origin
-
+from flask import request
 
 
 app = Flask(__name__)
@@ -14,8 +14,7 @@ nlp = spacy.load("en_core_web_sm")
 @app.route('/predict/<features>')
 def index1(features):
     try:
-        listOfDescriptions = features.split('<<<>>>')
-        print(len(listOfDescriptions))
+        listOfDescriptions = features.split('vvvvv')
         parsedLists = []
 
         for item in listOfDescriptions:
