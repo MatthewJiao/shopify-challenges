@@ -12,14 +12,28 @@ function App() {
   const [term, setTerm] = useState('vacation')
   const [imageTags, setImageTags] = useState([])
 
+  const removeVideos = (data) => {
+    let lst = []
+    for (let i = 0; i < data.length; ++i) {
+      if (data[i].media_type != "video") {
+        lst.push(data[i])
+      }
+    }
+
+    return lst
+  }
+
   var getTags = (images) => {
     var tagStr = []
     for (let i = 0; i < images.length; ++i) {
+      if (images.media_type == "video") continue
       let filtered = images[i].explanation
-      //filtered = filtered.replace(/[^a-zA-Z0-9 ]/g, "")
-      let lst = images[i].explanation.split(" ").filter((item) => item.length > 6).splice(0, (images[i].explanation.split(" ").length - 1) / 20)
-      tagStr.push(lst)
-      console.log("lst")
+      filtered = filtered.replace(/[^a-zA-Z0-9 ]/g, "")
+      let lst = filtered.split(" ").filter((item) => item.length > 6)
+      let shuffled = lst.sort(() => 0.5 - Math.random());
+      let selected = shuffled.slice(0, (shuffled.length - 1)/5);
+
+      tagStr.push(selected)
     }
 
     setImageTags(tagStr)
@@ -36,7 +50,7 @@ function App() {
     fetch(`https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_API_KEY}&count=8`)
       .then(res => res.json())
       .then(data => {
-        setImages(data);
+        setImages(removeVideos(data));
         setIsLoading(false);
         getTags(data)
         console.log("hello")
