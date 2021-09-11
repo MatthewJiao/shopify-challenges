@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import ImageCard from './components/ImageCard'
-import ImageSearch from './components/ImageSearch'
+import NavbarC from './components/Navbar'
 
 function App() {
   const [images, setImages] = useState([])
@@ -21,8 +21,10 @@ function App() {
 
   return (
     <div className = "container mx-auto">
+      <NavbarC/>
+
       { isLoading ? <h1 className = "text-6xl text-center mx-auto mt-32">Loading ...</h1> :
-      <div className = "grid grid-cols-3">
+      <div style = {displayStyle} className = "mt-12">
         {images.map((image, index) => (
           <ImageCard key = {index} image = {image}/>
         ))}
@@ -31,5 +33,10 @@ function App() {
     </div>
   );
 }
+
+const displayStyle = {
+  backgroundColor: "white"
+}
+
 
 export default App;
