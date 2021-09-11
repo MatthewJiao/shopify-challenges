@@ -21,7 +21,6 @@ const NavbarC = () => {
 
 const navStyle = {
     color: "#97bd4e",
-    overflow: "hidden",
     backgroundColor: "#f9f4eb",
     opacity: 0.95,
     position: "fixed",
