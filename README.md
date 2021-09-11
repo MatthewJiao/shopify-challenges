@@ -1,6 +1,6 @@
-**[Live Demo](https://spacestagram-shopify.herokuapp.com/)**
-
 # Shopify **Frontend** Challenge
+
+**[Live Demo](https://spacestagram-shopify.herokuapp.com/)**
 
 
 Features Implemented
