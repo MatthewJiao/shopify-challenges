@@ -19,7 +19,7 @@ Extra Note (Video)
 - I **filtered out** all **API responses** from **NASA APOD** with the `media_type` parameter of `video` for **simplicity**
 
 
-
+**Spacestagram Screenshot**
 ![Screenshot](Spacestagram.JPG)
 
 
