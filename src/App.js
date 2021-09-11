@@ -23,7 +23,7 @@ function App() {
       .then(data => {
         setImages(data);
         setIsLoading(false);
-        console.log(images)
+        console.log(data)
       })
       .catch(err => console.log(err));
   }, [term]);
