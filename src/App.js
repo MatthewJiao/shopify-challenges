@@ -9,7 +9,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true)
   const [isLoadingTags, setIsLoadingTags] = useState(true)
 
-  const [term, setTerm] = useState('vacation')
+  const [term, setTerm] = useState('kitten')
   const [imageTags, setImageTags] = useState([])
 
   const removeVideos = (data) => {
