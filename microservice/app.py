@@ -1,7 +1,14 @@
 from flask import Flask
 import spacy
 
+from flask_cors import CORS, cross_origin
+
+
+
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
+
 nlp = spacy.load("en_core_web_sm")
 
 @app.route('/predict/<features>')
