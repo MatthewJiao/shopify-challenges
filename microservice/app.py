@@ -1,20 +1,23 @@
 from flask import Flask
 import spacy
 
-
 app = Flask(__name__)
-
+nlp = spacy.load("en_core_web_sm")
 
 @app.route('/predict/<features>')
 def index1(features):
     try:
-        print('ting')
-        nlp = spacy.load("en_core_web_sm")
-        doc = nlp("Autonomous cars shift insurance liability toward manufacturers")
-        for chunk in doc.noun_chunks:
-            print(chunk.root.text)
-              
-        return 'data'
+        listOfDescriptions = features.split('<<<>>>')
+        parsedLists = []
+
+        for item in listOfDescriptions:
+            doc = nlp(item)
+            temp = []
+            for chunk in doc.noun_chunks:
+                temp.append(chunk.root.text)
+            parsedLists.append(temp)
+        print(parsedLists)
+        return str(parsedLists)
     except:
         return "Error"
 
