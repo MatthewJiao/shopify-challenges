@@ -12,13 +12,14 @@ function App() {
   const [term, setTerm] = useState('vacation')
   const [imageTags, setImageTags] = useState([])
 
-  const getTags = () => {
-    let tagStr = []
+  var getTags = (images) => {
+    var tagStr = []
     for (let i = 0; i < images.length; ++i) {
       let filtered = images[i].explanation
       //filtered = filtered.replace(/[^a-zA-Z0-9 ]/g, "")
-      tagStr.push(images[i].explanation.replace(/[^a-zA-Z0-9 ]/g, "").split(" ").filter((item) => item.length > 6).splice(0, (images[i].explanation.replace(/[^a-zA-Z0-9 ]/g, "").split(" ").length - 1) / 20))
-      
+      let lst = images[i].explanation.split(" ").filter((item) => item.length > 6).splice(0, (images[i].explanation.split(" ").length - 1) / 20)
+      tagStr.push(lst)
+      console.log("lst")
     }
 
     setImageTags(tagStr)
@@ -37,8 +38,8 @@ function App() {
       .then(data => {
         setImages(data);
         setIsLoading(false);
-        getTags()
-        
+        getTags(data)
+        console.log("hello")
         console.log(data)
       })
       .catch(err => console.log(err));
@@ -52,7 +53,7 @@ function App() {
       { (isLoading || isLoadingTags) ? <Loading/> :
       <div style = {displayStyle} className = "mt-12">
         {images.map((image, index) => (
-          <ImageCard key = {index} image = {image} tags = {['imageTags[index]']}/>
+          <ImageCard key = {index} image = {image} tags = {imageTags[index]}/>
         ))}
       </div>
       }
