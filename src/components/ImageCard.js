@@ -37,7 +37,7 @@ const ImageCard = ({image}) => {
         </div>
         <button style = {heartButtonStyle}>
 
-          <BsHeart style = {heartStyle} />   
+        <i class="fal fa-heart"></i>  
 
         </button>     
       </div>
