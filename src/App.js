@@ -26,21 +26,7 @@ function App() {
     tagStr = tagStr.replace(/[^a-zA-Z0-9 ]/g, "")
     let API = "http://127.0.0.1:5000/predict/" + tagStr
 
-    axios({
-      method: "GET",
-      url: API
-    }).then((res) => {
-      let temp = res.data
-      temp = temp.replaceAll("'", '')
-      temp = temp.replaceAll(",", '')
-      temp = temp.replaceAll("[[", '')
-      temp = temp.replaceAll("]]", '')
-      let newTags = temp.split('] [')
-      setImageTags(newTags.map(item => (item.split(' ').splice(0, (item.split(' ').length - 1)/4))))
-      console.log(newTags + '')
-      console.log(newTags)
-
-    })
+   
 
     setIsLoadingTags(false)
     
