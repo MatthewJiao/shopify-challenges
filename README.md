@@ -1,6 +1,6 @@
 # Shopify **Backend** Challenge
 
-**[Live Demo](https://spacestagram-shopify.herokuapp.com/)**
+**[Live Demo](https://image-repository--shopify.herokuapp.com/)**
 
 
 Description of Image Repository
