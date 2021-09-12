@@ -8,7 +8,7 @@ Description of Image Repository
 - **Search functionlity** allows user to search for different images based on image characteristics
 - **Descriptive** elements including how many times each image is **liked**, **downloaded**, or **viewed** are pulled from **Pixabay** and displayed
 - **Image tags** are pulled from **Pixabay** and displayed
-- **Loading** state while images are being fetched *(May need to slow down network speed to see this)*
+- **Loading** state is shown while images are being fetched *(May need to slow down network speed to see this)*
 
 
 
