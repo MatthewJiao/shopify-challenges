@@ -1,4 +1,6 @@
 from flask import Flask
+from flask import request
+
 import spacy
 
 from flask_cors import CORS, cross_origin
@@ -9,21 +11,24 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 
 nlp = spacy.load("en_core_web_sm")
 
-@app.route('/predict/<features>')
-def index1(features):
+@app.route('/predict', methods = ['GET', 'POST', 'DELETE'])
+def index1():
     try:
-        listOfDescriptions = features.split('vvvvv')
-        parsedLists = []
-
-        for item in listOfDescriptions:
-            doc = nlp(item)
-            temp = []
-            for chunk in doc.noun_chunks:
-                temp.append(chunk.root.text)
-            parsedLists.append(temp)
+        if request.method == 'POST':
+            val = request.json["tagStr"]
             
-        
-        return str(parsedLists)
+            listOfDescriptions = val.split('vvvvv')
+            parsedLists = []
+
+            for item in listOfDescriptions:
+                doc = nlp(item)
+                temp = []
+                for chunk in doc.noun_chunks:
+                    temp.append(chunk.root.text)
+                parsedLists.append(temp)
+            
+            
+            return str(parsedLists)
     except:
         return "Error"
 
