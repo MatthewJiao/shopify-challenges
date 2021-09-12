@@ -16,7 +16,7 @@ Extra Note (Keyword Image Tagging)
 Extra Note (Video)
 - I **filtered out** all **API responses** from **NASA APOD** with the `media_type` parameter of `video` for **simplicity**
 
-Extra Note (Mishaps that I made along the way which I **fixed**)
+Extra Note (Mishaps that I made along the way which I ***fixed***)
 - I didn't realize that most browsers have a **URL character limit** and I sent data to my **Keyword parsing API** through **URL params** with **GET** requests. Fixed with **POST** request.
 - I initially didn't have **CORS** set up on my **Keyword parsing API**. Since my **client side** and **API** are hosted on different ports, this was a problem. 
 - I didn't notice that one of my function calls made use of a React **state** parameter (which is **async**) instead of the response parameter which is. This left me confused for quite some time.
