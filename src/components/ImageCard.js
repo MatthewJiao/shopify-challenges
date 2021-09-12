@@ -20,10 +20,10 @@ const ImageCard = ({image, tags}) => {
         </div>
         <ul style = {infoStyle}>
           <li style = {{color: "#8ca35a"}}>
-            <strong>Date:</strong> {image.date}
+             {image.date}
           </li>
           <li>
-            <strong>Description:</strong> {description}.
+            {description}.
           </li>
           
         </ul>
