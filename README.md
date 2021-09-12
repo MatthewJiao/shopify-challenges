@@ -13,7 +13,7 @@ Extra Note (Image Tags)
 - I used **spaCy** **NLP** speech tagging library in **Python** and deployed the endpoint with **Flask**. (Javascript doesn't have great NLP capabilities!).
 - I left **this** feature **local** because of the extra **latency** and **risk** of the backend **crashing** which I *occasionally* experienced while testing.
 - Instead, the **live** demo makes use of a simpler tagging technique 
-- **Directory:** `microservice/app.py` (Custom NLP **API** I built)
+- **Directory:** `microservice/app.py` (Custom tagging **API** that I put together)
 
 Extra Note (Video)
 - I **filtered out** all **API responses** from **NASA APOD** with the `media_type` parameter of `video` for **simplicity**
