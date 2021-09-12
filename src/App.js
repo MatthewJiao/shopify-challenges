@@ -11,6 +11,7 @@ function App() {
 
   const [term, setTerm] = useState('vacation')
   const [imageTags, setImageTags] = useState([])
+  const imageCount = 50
 
   const removeVideos = (data) => {
     let lst = []
@@ -21,6 +22,14 @@ function App() {
     }
 
     return lst
+  }
+
+  const getMix = (items) => {
+    // make sure keywords are unique, shuffle, select
+    let uniq = [...new Set(items)];
+    let shuffled = uniq.sort(() => 0.5 - Math.random())
+    let selected = shuffled.slice(0, (shuffled.length - 1) / 3);
+    return selected
   }
 
   const getTags = (images) => {
@@ -36,10 +45,16 @@ function App() {
 
     tagStr = tagStr.replace(/[^a-zA-Z0-9 ]/g, "")
     //console.log(tagStr)
-    
+
+    // local api path for testing
     let LOCAL_API_PATH = 'http://127.0.0.1:5000'
-    let LIVE_API_PATH = 'https://noun-parser.ue.r.appspot.com'
+
+    // live api path
+    let LIVE_API_PATH = process.env.REACT_APP_LIVE_KEYWORD_API_PATH
+
+    // endpoint route
     let route = '/predict'
+
     let API_ENDPOINT = LIVE_API_PATH + route
 
     axios({
@@ -55,8 +70,8 @@ function App() {
       temp = temp.replaceAll("[[", '')
       temp = temp.replaceAll("]]", '')
       let newTags = temp.split('] [')
-      setImageTags(newTags.map(item => (item.split(' ').splice(0, (item.split(' ').length - 1)/4))))
-      console.log(newTags)
+      setImageTags(newTags.map(item => (getMix(item.split(' ')))))
+      //console.log(newTags)
       setIsLoadingTags(false)
 
     })
@@ -65,7 +80,7 @@ function App() {
   }
 
   useEffect(() => {
-    fetch(`https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_API_KEY}&count=8`)
+    fetch(`https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_API_KEY}&count=${imageCount}`)
       .then(res => res.json())
       .then(data => {
         setImages(removeVideos(data));
