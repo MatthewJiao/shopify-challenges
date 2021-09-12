@@ -1,4 +1,4 @@
-# Shopify **Backend** Challenge
+# Shopify **Developer** Challenge
 
 **[Live Demo](https://image-repository--shopify.herokuapp.com/)**
 
