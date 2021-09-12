@@ -9,7 +9,7 @@ Features Implemented
 - **Keyword Image Tagging (#)** with NLP **[spaCy](https://spacy.io/usage/linguistic-features)** library 
 
 Extra Note (Keyword Image Tagging)
-- Since Nasa has currently disabled their **concept_tags** parameter on the **APOD API** which provides useful **image tags**, I decided to build my own **keyword taggig API** to do such. 
+- Since Nasa has currently disabled their **concept_tags** parameter on the **APOD API** which provides useful **image tags**, I decided to build my own **keyword tagging API** to do such. 
 - I used **spaCy** **NLP** speech tagging library in **Python** and deployed the endpoint with **Flask** on **GCP**. (Javascript doesn't have great NLP capabilities!).
 - **Directory:** `./microservice/` (**keyword tagging API** that I put together)
 
