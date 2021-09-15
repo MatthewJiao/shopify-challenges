@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import parse from 'de-noun-parser';
 import { BsHeartFill } from 'react-icons/bs';
-
+import "./ImageCard.css"
 
 const ImageCard = ({image, tags}) => {
   const description = image.explanation.split('.')[0]
@@ -12,7 +12,7 @@ const ImageCard = ({image, tags}) => {
   }
   
     return (
-        <div style = {cardBorderStyle} className = "max-w-sm rounded-md overflow-hidden shadow-lg">
+        <div style = {carBorderStyle2} className = "cardBorderStyle max-w-sm rounded-md overflow-hidden shadow-lg">
       <img src = {image.url} alt = {image.hdurl} style = {imageStyle} className = "w-full"/>
       <div className = "px-6 py-4">
         <div style = {titleStyle} className = "font-bold text-xl mb-2">
@@ -65,7 +65,7 @@ const titleStyle = {
   color: "#618c40"
 }
 
-const cardBorderStyle = {
+const carBorderStyle2 = {
   borderColor: "#b5c98a",
   borderWidth: "2px",
   marginBottom: "0.5rem",
