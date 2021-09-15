@@ -1,5 +1,7 @@
 import React from 'react'
 import reactDom from 'react-dom'
+import { cleanup, render } from '@testing-library/react'
+import renderer from 'react-test-renderer'
 
 import ImageCard from '../ImageCard'
 
@@ -26,10 +28,16 @@ const image_test_data = {
     "user_id": 334088,
     "user": "JillWellington",
     "userImageURL": "https://cdn.pixabay.com/user/2018/06/27/01-23-02-27_250x250.jpg"
-}
+};
 
+afterEach(cleanup)
 it("image card renders properly and without issue", () => {
-    const div = document.createElement("div")
-    reactDom.render(<ImageCard image = {image_test_data} />, div)
+    const div = document.createElement("div");
+    reactDom.render(<ImageCard image = {image_test_data} />, div);
 })
 
+
+it("matches snapshot", () => {
+    const tree = renderer.create(<ImageCard image = {image_test_data}/>).toJSON();
+    expect(tree).toMatchSnapshot()
+})

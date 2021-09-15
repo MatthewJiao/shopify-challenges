@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="max-w-sm rounded-md overflow-hidden shadow-lg"
+  style={
+    Object {
+      "backgroundColor": "white",
+      "borderColor": "#6DCBC5",
+      "borderWidth": "3px",
+      "marginBottom": "0.5rem",
+      "marginLeft": "auto",
+      "marginRight": "auto",
+    }
+  }
+>
+  <img
+    alt="https://pixabay.com/get/ge66b364c4be13d5c3ce681fd7dd3c45e5b21c607c7b374747fb447adcae34ebf6ec62b0387214262bb33f4d26d1f524c13dfc6572c4b583b36cad9efdf927c37_1280.jpg"
+    className="w-full"
+    src="https://pixabay.com/get/g166b73dca4c700cd0a7cfd321cbf6e71447dfaa241a1e2ce5dbd38d67f1f05a5777ee02ddbc1921ad69748251c3c43c2435173a8de7bb63de5d51f77af154083_640.jpg"
+    style={Object {}}
+  />
+  <div
+    className="px-6 py-4"
+  >
+    <div
+      className="font-bold text-xl mb-2"
+      style={
+        Object {
+          "color": "#15827b",
+        }
+      }
+    />
+    <ul
+      style={
+        Object {
+          "color": "#6DCBC5",
+        }
+      }
+    >
+      <li
+        style={
+          Object {
+            "color": "#31948e",
+          }
+        }
+      >
+        <strong>
+          View:
+        </strong>
+         
+        887498
+      </li>
+      <li>
+        <strong>
+          Downloads:
+        </strong>
+         
+        461158
+      </li>
+      <li>
+        <strong>
+          Likes:
+        </strong>
+         
+        2195
+      </li>
+    </ul>
+  </div>
+  <div
+    className="px-6 py-4 pt-1"
+    style={
+      Object {
+        "display": "flex",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <div>
+      <span
+        className="inline-block rounded-md px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
+        style={
+          Object {
+            "backgroundColor": "#deffe2",
+            "color": "#368580",
+            "marginBottom": "0.2rem",
+            "marginTop": "0.2rem",
+          }
+        }
+      >
+        #
+        woman,
+      </span>
+      <span
+        className="inline-block rounded-md px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
+        style={
+          Object {
+            "backgroundColor": "#deffe2",
+            "color": "#368580",
+            "marginBottom": "0.2rem",
+            "marginTop": "0.2rem",
+          }
+        }
+      >
+        #
+        field,
+      </span>
+      <span
+        className="inline-block rounded-md px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
+        style={
+          Object {
+            "backgroundColor": "#deffe2",
+            "color": "#368580",
+            "marginBottom": "0.2rem",
+            "marginTop": "0.2rem",
+          }
+        }
+      >
+        #
+        sunlight
+      </span>
+    </div>
+  </div>
+</div>
+`;
