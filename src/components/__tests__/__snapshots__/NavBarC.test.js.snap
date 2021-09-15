@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="pb-3 pt-1"
+  style={
+    Object {
+      "backgroundColor": "#deffe2",
+      "color": "#c5d4d2",
+      "display": "flex",
+      "fontSize": "2rem",
+      "fontWeight": "bold",
+      "justifyContent": "center",
+      "opacity": 0.95,
+      "position": "fixed",
+      "top": 0,
+      "width": "100%",
+    }
+  }
+>
+  Image Repository
+</div>
+`;

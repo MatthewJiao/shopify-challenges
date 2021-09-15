@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="max-w-sm rounded overflow-hidden my-10 mx-auto"
+  style={
+    Object {
+      "marginTop": "5rem",
+    }
+  }
+>
+  <form
+    className="w-full max-w-sm"
+    onSubmit={[Function]}
+    style={Object {}}
+  >
+    <div
+      className="flex items-center border-b border-b-2 border-teal-500 py-2"
+    >
+      <input
+        className="appearance-none bg-transparent border-none w-full text-gray-900 mr-3 py-1 px-2 leading-tight focus:outline-none"
+        onChange={[Function]}
+        placeholder="Search ..."
+        style={
+          Object {
+            "color": "#6DCBC5",
+            "fontSize": "1.6rem",
+            "placeholder": Object {
+              "color": "red",
+              "opacity": "1",
+            },
+          }
+        }
+        type="text"
+      />
+      <button
+        className="rounded-md text-sm border-2 py-1 px-2"
+        style={
+          Object {
+            "backgroundColor": "#6DCBC5",
+            "borderColor": "white",
+            "color": "white",
+            "fontSize": "1rem",
+            "padding": "0.5rem",
+          }
+        }
+        type="submit"
+      >
+        Search
+      </button>
+    </div>
+  </form>
+</div>
+`;
