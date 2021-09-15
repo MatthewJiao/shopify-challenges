@@ -3,6 +3,7 @@ import ImageCard from './components/ImageCard'
 import NavbarC from './components/Navbar'
 import Loading from './components/Loading'
 import axios from 'axios'
+import "./App.css"
 
 function App() {
   const [images, setImages] = useState([])
@@ -11,7 +12,7 @@ function App() {
 
   const [term, setTerm] = useState('vacation')
   const [imageTags, setImageTags] = useState([])
-  const imageCount = 50
+  const imageCount = 8
 
   const removeVideos = (data) => {
     let lst = []
@@ -106,7 +107,6 @@ function App() {
 }
 
 const displayStyle = {
-  backgroundColor: "white"
 }
 
 
