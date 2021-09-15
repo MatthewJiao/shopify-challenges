@@ -4,9 +4,10 @@
 
 
 Features Implemented
-- Animated **loading state** while images are being fetched
-- **Shopify** design themed ***loading state*** and ***image cards*** from **[www.shopify.com](https://www.shopify.com/)** with custom **background-graphics** designed with **LunaPic**
-- **Keyword Image Tagging (#)** with NLP **[spaCy](https://spacy.io/usage/linguistic-features)** library 
+- *Animated* **loading state** while images are being fetched
+- **Shopify** design themed ***loading state*** and ***image cards*** from **[www.shopify.com](https://www.shopify.com/)** 
+- Custom *space-themed* **background-graphics** for **image cards** designed with **LunaPic** editor
+- Custom AI **Keyword Image Tagging API (#)** built with **Flask**, **[spaCy NLP library](https://spacy.io/usage/linguistic-features)**, and deployed on **GCP**
 
 Extra Note (Keyword Image Tagging)
 - Since Nasa has currently disabled their **concept_tags** parameter on the **APOD API** which provides useful **image tags**, I decided to build my own **keyword tagging API** to do such. 
