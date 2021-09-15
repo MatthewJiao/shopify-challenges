@@ -1,6 +1,6 @@
 # Shopify **Developer** Challenge
 
-**[Live Demo](https://image-repository--shopify.herokuapp.com/)**
+**[Live Demo](https://image-repository--shopify.herokuapp.com/)** *hosted with Heroku*
 
 
 Image Repository Features
