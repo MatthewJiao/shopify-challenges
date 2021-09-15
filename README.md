@@ -23,4 +23,7 @@ Extra Note (Mishaps that I made along the way which I later ***fixed***)
 
 ![Screenshot](Spacestagram.JPG)
 
+![Screenshot](Spacestagram2.JPG)
+
+
 
