@@ -12,7 +12,7 @@ function App() {
 
   const [term, setTerm] = useState('vacation')
   const [imageTags, setImageTags] = useState([])
-  const imageCount = 8
+  const imageCount = 50
 
   const removeVideos = (data) => {
     let lst = []
