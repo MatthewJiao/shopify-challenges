@@ -5,7 +5,7 @@
 
 Features Implemented
 - *Animated* **loading state** while images are being fetched
-- **Shopify** design colors from **[www.shopify.com](https://www.shopify.com/)** 
+- **Shopify** design **colors** from **[www.shopify.com](https://www.shopify.com/)** 
 - Custom *space-themed* **background-graphics** for **image cards** I designed with **LunaPic** editor
 - Custom **AI-based Keyword Image Tagging API (#)** I built with **Flask**, **[spaCy NLP library](https://spacy.io/usage/linguistic-features)**, and deployed on **GCP**
 
