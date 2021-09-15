@@ -4,8 +4,8 @@
 
 
 Features Implemented
-- **Loading** state while images are being fetched
-- **Shopify** design theme from **[www.shopify.com](https://www.shopify.com/)**
+- Animated **loading state** while images are being fetched
+- **Shopify** design themed ***loading state*** and ***image cards*** from **[www.shopify.com](https://www.shopify.com/)** with custom **background-graphics** designed with **LunaPic**
 - **Keyword Image Tagging (#)** with NLP **[spaCy](https://spacy.io/usage/linguistic-features)** library 
 
 Extra Note (Keyword Image Tagging)
