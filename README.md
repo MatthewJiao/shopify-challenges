@@ -1,6 +1,6 @@
 # Shopify **Frontend** Challenge
 
-**[Live Demo](https://spacestagram-shopify.herokuapp.com/)** *hosted on heroku*
+**[Live Demo](https://spacestagram-shopify.herokuapp.com/)** *<- hosted on heroku*
 
 
 Features Implemented
