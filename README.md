@@ -8,7 +8,7 @@ Features Implemented
 - **Shopify** design **colors** from **[www.shopify.com](https://www.shopify.com/)** 
 - Custom *space-themed* **background-graphics** for **image cards** I designed with **LunaPic** editor
 - Custom **AI-based Keyword Image Tagging API (#)** I built with **Flask**, **[spaCy NLP library](https://spacy.io/usage/linguistic-features)**, and deployed on **GCP**
-- Press the ***little heart*** (bottom-left-corner) to ***like*** the image
+- Press the ***little heart*** (bottom-left-corner) to ***like*** an image
 
 Extra Note (Keyword Image Tagging)
 - Since Nasa has currently disabled their **concept_tags** parameter on the **APOD API** which provides useful **image tags**, I decided to build my own **keyword tagging API** to do such. 
