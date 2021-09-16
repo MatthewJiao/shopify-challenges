@@ -3,7 +3,8 @@ import parse from 'de-noun-parser';
 
 
 const ImageCard = ({image}) => {
-  const tags = image.tags.split(' ')
+  const tags = image.tags.replaceAll(',', '').split(' ')
+  console.log(tags)
   
   
     return (
